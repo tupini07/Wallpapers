@@ -8,6 +8,12 @@ git pull git@github.com:turing753/wallpapers.git master
 # echo to `Preview.md` the appropriate line to include the image
 # preview
 
-ls | grep -vE ".+(md|sh)$" \
+ls | grep -vE ".+(md|sh|smp)$" \
    | xargs -I _ echo -e "### [_](_) \n![_](_)" \
    > Preview.md
+
+ls | grep -vE ".+(md|sh|smp)$" \
+    | xargs -I _ bash -c "grep '_' credits.smp \
+                               | cut -d':' -f2- \
+                               | cut -c 2- \
+                               | xargs -I {} echo -e '### [_](_) \n[{}]({}) \n![_](_)'" > Credits.md
