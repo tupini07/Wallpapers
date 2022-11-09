@@ -19,3 +19,13 @@ If I know where an image was published then I will try to add said references in
 the [Credits.md](Credits.md) file, which contains previews of the images and the
 link from where they were originally taken. Only images for which there is such
 a link are shown.
+
+
+## Adding new images
+
+Add the image to the root of the repo and remember to add an appropriate entry
+to `credits.smp` that maps the name of the image with the source it was taken
+from.
+
+Then run `generate_preview.sh` to generate the `Preview.md` file. This script
+will read `credits.smp` and generate the preview file from it.

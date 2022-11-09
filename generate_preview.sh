@@ -13,7 +13,7 @@ ls | grep -vE ".+(md|sh|smp)$" \
    > Preview.md
 
 ls | grep -vE ".+(md|sh|smp)$" \
-    | xargs -I _ bash -c "grep '_' credits.smp \
+   | xargs -I _ bash -c "grep '_' credits.smp \
                                | cut -d':' -f2- \
                                | cut -c 2- \
                                | xargs -I {} echo -e '### [_](_) \n[{}]({}) \n![_](_)'" > Credits.md
